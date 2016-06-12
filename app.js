@@ -14,8 +14,15 @@ exec(fetchCatImageCmd,
     writeLog('stdout.log', stdout);
     writeLog('stderr.log', stderr);
 
-    const catImageInfo = JSON.parse(stdout);
-    console.log(catImageInfo);
+    const searchResult = JSON.parse(stdout)
+        , catImagesInfo = searchResult.items
+        , rand = Math.floor(Math.random() * 10)
+        , catImage = catImagesInfo[rand]
+        ;
+
+    // debug
+    console.log(rand);
+    console.log(catImage);
   }
 );
 
